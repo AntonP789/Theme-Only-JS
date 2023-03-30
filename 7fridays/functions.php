@@ -8,21 +8,9 @@ remove_action('wp_head', 'wp_generator');
 //title tag support
 add_theme_support( 'title-tag' );
 
-// ENQUEUE STYLES
-     
-function enqueue_styles() {
-    wp_register_style( 'swiper-styles', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
-    wp_enqueue_style( 'swiper-styles' );
-}
-add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
-     
-// ENQUEUE SCRIPTS
 
 function enqueue_scripts() {
-
-    wp_deregister_script( 'swiper' );
-    wp_register_script( 'swiper', 'https://unpkg.com/swiper/swiper-bundle.min.js');
-    wp_enqueue_script( 'swiper' );
+    wp_deregister_script( 'jquery' );
 
     wp_register_script( 'custom_js', get_stylesheet_directory_uri() . '/js/custom.js' );
     wp_enqueue_script( 'custom_js' );   
